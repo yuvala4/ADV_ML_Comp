@@ -28,7 +28,7 @@ The final model must
 
 ---
 
-## Progress Log
+## Progress Log:
 
 ### **Step 1 – Data Audit & Hierarchy Sanity**  (✅ complete)
 
