@@ -32,19 +32,19 @@ The final model must
 
 ### **Step 1 – Data Audit & Hierarchy Sanity**  (✅ complete)
 
-| Check | Result |
-|-------|--------|
-| Shapes & dtypes | `train 18 766×4`, `calendar 162×2`, `forecast 1 012×2` |
-| Duplicate store-day rows | 0 after aggregation |
-| Unique stores | IDs 0–10 (aggregate + 10 branches) |
-| Aggregate consistency | `store 0` ≈ Σ(stores 1…10) – max diff ≈ \$0.04 |
-| Date coverage | Continuous grid 2011-01-29 → 2015-09-30 |
-| Zero-sales ratio | \< 0.3 % per store; none in aggregate |
-| Span per store | Identical min/max dates |
+| Check | Result                                                                                                             |
+|-------|--------------------------------------------------------------------------------------------------------------------|
+| Shapes & dtypes | `train 18 766×4`, `calendar 162×2`, `forecast 1012×2`                                                              |
+| Duplicate store-day rows | 0 after aggregation                                                                                                |
+| Unique stores | IDs 0–10 (aggregate + 10 branches)                                                                                 |
+| Aggregate consistency | `store 0` ≈ Σ(stores 1…10) – max diff ≈ \$0.04                                                                     |
+| Date coverage | Continuous grid 2011-01-29 → 2015-09-30                                                                            |
+| Zero-sales ratio | \< 0.3 % per store; none in aggregate                                                                              |
+| Span per store | Identical min/max dates                                                                                            |
 | Calendar merge | Added `event`, **±3-day lead/lag flags** (`event_lead1…lag3`), `dow`, `month`, `is_zero_day` → `full_df 18 766×14` |
-| Snapshot saved | `data/full_train.pkl` |
-| Target transform | **`log1p(revenue)`** |
-| Zero-day handling | Keep 0s + `is_zero_day` flag |
+| Snapshot saved | `data/full_train.pkl`                                                                                              |
+| Target transform | **`log1p(revenue)`**                                                                                               |
+| Zero-day handling | Keep 0s + `is_zero_day` flag                                                                                       |
 
 ---
 
